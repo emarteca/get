@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsc && tsc -p tsconfig.esm.json",
     "build:docs": "typedoc --out docs",
-    "jest": "jest --coverage",
+    "jest": "jest --coverage --detectOpenHandles",
     "lint": "prettier --check \"src/**/*.ts\"",
     "prepublishOnly": "npm run build",
     "test": "npm run lint && npm run jest",
