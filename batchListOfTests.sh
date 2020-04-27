@@ -17,12 +17,12 @@ fi
 for (( x=0; x<$warmups; x++ )); do
 	echo "Warmup run: "$x" of "$warmups
 	# run some tests into the void 
-	yarn jest -- --o
+	yarn jest
 done
 
 for x in $(eval echo {1..$1}); do
 	echo "Running test suite: " $x
-	yarn jest -- --o --runInBand --runTestsByPath $(cat $2) >> $3 
+	yarn jest --runInBand --runTestsByPath $(cat $2) >> $3 
 	sed -rin "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" $3
 	python process_jest_xml_out.py $4
 	echo "Done running test suite, cleaning up now..."

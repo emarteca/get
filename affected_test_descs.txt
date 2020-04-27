@@ -1,0 +1,4 @@
+GotDownloader download() should download to a deep uncreated path
+GotDownloader download() should throw an error if the file does not exist
+GotDownloader download() should throw an error if the file write stream fails
+GotDownloader download() should download a remote file to the given file path
